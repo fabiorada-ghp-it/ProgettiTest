@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    table {
+      width: 100%;
+      max-width: 720px;
+      border-collapse: collapse;
+    }
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 2px solid #0ff;
+      color: #0ff;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #222;
+      color: #ccc;
+      font-size: 14px;
+    }
+    tr:hover td {
+      background-color: #1a1a1a;
+    }
+    .icon {
+      margin-right: 6px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #0ff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Impostazioni</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-item"><a href="/">Generale</a></li>
+        <li class="menu-item"><a href="/">Privacy</a></li>
+        <li class="menu-item"><a href="/">Sicurezza</a></li>
+        <li class="menu-item"><a href="/">Aspetto</a></li>
+        <li class="menu-item attivo"><a href="/mostra">File</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>File</h1>
+      <a class="back" href="/">&#8592; Torna alle impostazioni</a>
+
+      {{if .}}
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Dimensione</th>
+            <th>Ultima modifica</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .}}
+          <tr>
+            <td>
+              {{if .IsDir}}
+                <span class="icon">&#128193;</span>{{.Nome}}/
+              {{else}}
+                <span class="icon">&#128196;</span>{{.Nome}}
+              {{end}}
+            </td>
+            <td>{{if .IsDir}}—{{else}}{{.Dimensione}}{{end}}</td>
+            <td>{{.Modifica}}</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
+      {{else}}
+      <p>Nessun file trovato.</p>
+      {{end}}
+    </main>
+  </div>
+</body>
+</html>

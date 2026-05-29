@@ -1,0 +1,112 @@
+/* Impostazioni generali */
+body {
+  background-color: #000;        /* sfondo nero */
+  color: #fff;                   /* testo bianco */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout principale */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra laterale */
+.sidebar {
+  width: 220px;
+  background-color: #111;        /* nero leggermente più chiaro */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #0ff;                   /* azzurro per evidenziare il titolo */
+}
+
+/* Menu laterale */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-item a {
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item a:hover,
+.menu-item.attivo a {
+  background-color: #0ff;
+  color: #000;
+}
+
+/* Stile form impostazioni */
+label {
+  display: block;
+  margin-bottom: 16px;
+  color: #ccc;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  display: block;
+  margin-top: 6px;
+  width: 100%;
+  max-width: 360px;
+  padding: 8px 10px;
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #0ff;
+}
+
+button[type="submit"] {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background-color: #0ff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0cc;
+}
+
+/* Contenuto principale */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+h1 {
+  color: #0ff;
+}
+
+p {
+  color: #ddd;
+}

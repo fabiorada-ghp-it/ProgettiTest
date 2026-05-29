@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impostazioni</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Impostazioni</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-item" data-action="generale">
+          <a href="#">Generale</a>
+        </li>
+        <li class="menu-item" data-action="privacy">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="menu-item" data-action="sicurezza">
+          <a href="#">Sicurezza</a>
+        </li>
+        <li class="menu-item" data-action="aspetto">
+          <a href="#">Aspetto</a>
+        </li>
+        <li class="menu-item" data-action="File">
+          <a href="/mostra">File</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>Benvenuto nelle Impostazioni</h1>
+      <form id="action-form" method="GET" action="">
+        <p>Seleziona una categoria dal menu a sinistra per visualizzare le impostazioni.</p>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
